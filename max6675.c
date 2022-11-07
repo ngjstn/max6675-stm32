@@ -1,10 +1,8 @@
 #include "max6675.h" 
 
-
 max6675_tc* tc_create(void) {
     return (max6675_tc*)malloc(sizeof(max6675_tc)); 
 }
-
 
 float tc_readTemp(max6675_tc* sensor, GPIO_TypeDef* CS_PORT, uint16_t CS_PIN) {
     uint8_t buffer[2]; 
@@ -22,7 +20,6 @@ float tc_readTemp(max6675_tc* sensor, GPIO_TypeDef* CS_PORT, uint16_t CS_PIN) {
 
     return celcius; 
 }
-
 
 void tc_free(max6675* sensor) {
     free(sensor); 

@@ -13,7 +13,7 @@ extern SPI_HandleTypeDef hspi1;
 #define DATA_OUTPUT_RES 4096 // 12 bit resolution output
 
 
-typedef struct thermocouple thermocouple; 
+typedef struct max6675_tc max6675_tc; 
 
 struct max6675_tc {
     float tempCelcius; 
