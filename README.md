@@ -32,10 +32,11 @@ int main(void)
     while (1) 
     {
         float temp = tc_readTemp(sensor); 
+        uint8_t* buffer_tx[64];
+	    sprintf((char*)buffer_tx, "Temperature: %.0fC\r\n", temp);
+	    HAL_UART_Transmit(&huart3, buffer_tx, strlen((char*)buffer_tx), 1000);
         HAL_Delay(100); 
     }
-
 }
-
 
 ```
